@@ -42,6 +42,12 @@ import zustand from "../assets/zustand.png";
 import reactquery from "../assets/reactquery.png";
 import antd from "../assets/antd.svg";
 import materialui from "../assets/materialui.png";
+import dots from "../assets/dots.jpeg";
+import bosch from "../assets/bosch.jpeg";
+import bmw from "../assets/bmw.jpeg";
+import atrato from "../assets/atrato.jpeg";
+import esslingen from "../assets/esslingen.jpeg";
+import Section from "@/components/Section";
 
 export default function Home() {
 	return (
@@ -62,7 +68,7 @@ export default function Home() {
 						className='rounded-full border-4 border-whte absolute -bottom-20 left-6'
 					/>
 				</div>
-				<div className='mt-24 px-6 mb-10'>
+				<div className='mt-24 px-8 mb-10'>
 					<p className='text-3xl'>Esteban Pérez Martínez</p>
 					<p className='text-xl'>Software engineer</p>
 					<p className='flex mt-3'>
@@ -123,21 +129,58 @@ export default function Home() {
 						<Tags name='Slack' image={slack} />
 						<Tags name='Cloudinary' image={cloudinary} />
 					</div>
-					<p className='mt-16 mb-10 text-xl border-b-2 border-slate-100'>
+					<p className='mt-16 mb-8 text-xl border-b-2 border-slate-100'>
 						Work Experience
 					</p>
-					<div className='flex justify-start items-start gap-5'>
-						<Image alt='dots' src={slack} width={40} height={40} />
-						<div>
-							<p>Full-stack Software Engineer</p>
-							<p>Dots (YCS21)</p>
-							<p>Aug 2022 - Apr 2023</p>
-							<p>NY, US (Remote)</p>
-						</div>
+					<div className='flex flex-col gap-6'>
+						<Section
+							position='Full-stack Software Engineer'
+							institution='Dots (YCS21)'
+							period='Aug 2022 - Apr 2023'
+							place='New York, US (Remote)'
+							image={dots}
+						/>
+						<Section
+							position='(Internship) Thesis Climatic condition monitoring in electric systems with AI'
+							institution='Bosch Engineering GmbH'
+							period='Mar 2022 - Jul 2022 · 5 mos'
+							place='Reutlingen, Baden-Württemberg, Germany'
+							image={bosch}
+						/>
+						<Section
+							position='(Internship) Development and type testing'
+							institution='BMW Group'
+							period='Sep 2021 - Feb 2022 · 6 mos'
+							place='Munich, Bavaria, Germany'
+							image={bmw}
+						/>
+						<Section
+							position='Founding Software Engineer'
+							institution='Atrato (YCW21)'
+							period='Jan 2020 - Feb 2021 · 1 yr 2 mos'
+							place='Guadalajara, Jalisco, Mexico'
+							image={atrato}
+						/>
 					</div>
-					<p className='mt-6 text-xl border-b border-slate-700 max-w-[200px]'>
+					<p className='mt-16 mb-8 text-xl border-b-2 border-slate-100'>
 						Education
 					</p>
+					<div className='flex flex-col gap-6'>
+						<Section
+							position='Hochschule Esslingen - University of Applied Sciences'
+							institution='Double Degree Program, Mechatronics, Robotics, and Automation Engineering'
+							period='2021 - 2022'
+							place='Germany'
+							image={esslingen}
+						/>
+						<Section
+							position='Tecnológico de Monterrey'
+							institution='Mechatronics Engineering'
+							period='2017 - 2022'
+							place='Mexico'
+							image={esslingen}
+						/>
+					</div>
 				</div>
 			</main>
 		</>
