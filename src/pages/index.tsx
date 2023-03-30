@@ -57,27 +57,6 @@ export default function Home() {
 	const [showCopiedEmail, setShowCopiedEmail] = useState(false);
 	const [showCopiedNumber, setShowCopiedNumber] = useState(false);
 
-	// function handleDownloadPDF() {
-	// 	const link = document.createElement("a");
-	// 	link.href = pdf;
-	// 	link.download = "Esteban-Perez-CV.pdf";
-	// 	document.body.appendChild(link);
-	// 	link.click();
-	// 	document.body.removeChild(link);
-	// }
-	// function handleDownloadPDF() {
-	// 	const file = require("../assets/Esteban-Perez-CV.pdf");
-	// 	const blob = new Blob([file], { type: "application/pdf" });
-	// 	const url = URL.createObjectURL(blob);
-	// 	const link = document.createElement("a");
-	// 	link.href = url;
-	// 	link.download = "Esteban-Perez-CV.pdf";
-	// 	document.body.appendChild(link);
-	// 	link.click();
-	// 	document.body.removeChild(link);
-	// 	URL.revokeObjectURL(url);
-	// }
-
 	return (
 		<>
 			<Head>
