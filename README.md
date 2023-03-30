@@ -4,6 +4,20 @@
 This repository contains my curriculum vitae. It includes my work experience, education, skills, and any other relevant information for potential employers or collaborators.
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Getting Started
 
 First, run the development server:
