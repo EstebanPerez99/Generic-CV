@@ -217,7 +217,7 @@ export default function Home() {
 						<Section
 							position='Full-stack Software Engineer'
 							institution='Dots (YCS21)'
-							period='Aug 2022 - Apr 2023'
+							period='Aug 2022 - Present · 8 mos'
 							place='New York, US (Remote)'
 							image={dots}
 						/>
