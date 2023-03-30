@@ -1,4 +1,8 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+##My Curriculum Vitae
+
+This repository contains my curriculum vitae. It includes my work experience, education, skills, and any other relevant information for potential employers or collaborators.
+
 
 ## Getting Started
 
