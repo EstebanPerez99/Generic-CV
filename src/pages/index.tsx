@@ -94,13 +94,11 @@ export default function Home() {
 						<LinkedinIcon size={31} />
 					</a>
 					<a
-						// target='_blank'
-						// rel='noopener noreferrer'
-						// href='https://drive.google.com/file/d/1uEOiAjcR4z56HDJx2Rgf78D7sumiq-x4/view?usp=sharing'
 						href='https://www.estebanpm.com/cv.pdf'
 						download
 						className='bg-slate-800 text-white px-3 rounded-md flex items-center justify-center'
 					>
+						<DownloadIcon className='mr-2' />
 						Download CV
 					</a>
 				</div>
@@ -156,9 +154,7 @@ export default function Home() {
 						<Tags name='Jest' image={jest} />
 						<Tags name='React Query' image={reactquery} />
 						<Tags name='Zustand' image={zustand} />
-						<Tags name='Redux' image={redux} />
 						<Tags name='Prisma ORM' image={prisma} />
-						<Tags name='TypeORM' image={typeorm} />
 						<Tags name='PostreSQL' image={postgre} />
 						<Tags name='MySQL' image={mysql} />
 						<Tags name='Javascript' image={js} />
@@ -170,6 +166,8 @@ export default function Home() {
 					</div>
 					<p className='text-slate-400 mt-4'>Intermediate</p>
 					<div className='flex mt-2 gap-3 flex-wrap'>
+						<Tags name='Redux' image={redux} />
+						<Tags name='TypeORM' image={typeorm} />
 						<Tags name='Keras' image={keras} />
 						<Tags name='Pandas' image={pandas} />
 						<Tags name='Numpy' image={numpy} />
