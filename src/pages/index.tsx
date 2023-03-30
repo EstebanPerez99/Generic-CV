@@ -105,6 +105,7 @@ export default function Home() {
 				<div className='mt-6 md:mt-12 px-8 mb-10'>
 					<p className='text-3xl'>Esteban Pérez Martínez</p>
 					<p className='text-xl'>Software engineer</p>
+					<p className='text-lg text-slate-500'>Guadalajara, Mexico</p>
 					<p
 						className='flex mt-3 cursor-pointer'
 						onClick={() => {
