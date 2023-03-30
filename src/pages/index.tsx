@@ -50,8 +50,9 @@ import atrato from "../assets/atrato.jpeg";
 import tec from "../assets/tecmty.svg";
 import esslingen from "../assets/esslingen.jpeg";
 import Section from "@/components/Section";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import DownloadIcon from "@/icons/DownloadIcon";
+import GithubIcon from "@/icons/GithubIcon";
 
 export default function Home() {
 	const [showCopiedEmail, setShowCopiedEmail] = useState(false);
@@ -78,7 +79,7 @@ export default function Home() {
 						className='rounded-full border-4 border-white absolute -bottom-20 left-6'
 					/>
 				</div>
-				<div className='flex gap-4 ml-8 mt-24 flex-wrap md:ml-52 md:mt-6'>
+				<div className='flex gap-4 ml-8 mt-24 flex-wrap md:ml-52 md:mt-6 items-center justify-start'>
 					<a
 						target='_blank'
 						rel='noopener noreferrer'
@@ -94,9 +95,16 @@ export default function Home() {
 						<LinkedinIcon size={31} />
 					</a>
 					<a
+						target='_blank'
+						rel='noopener noreferrer'
+						href='https://github.com/EstebanPerez99'
+					>
+						<GithubIcon size={30} />
+					</a>
+					<a
 						href='https://www.estebanpm.com/cv.pdf'
 						download
-						className='bg-slate-800 text-white px-3 rounded-md flex items-center justify-center'
+						className='bg-slate-800 text-white px-3 rounded-md flex items-center justify-center py-1'
 					>
 						<DownloadIcon className='mr-2' />
 						Download CV
