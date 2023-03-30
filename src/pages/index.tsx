@@ -94,9 +94,10 @@ export default function Home() {
 						<LinkedinIcon size={31} />
 					</a>
 					<a
-						target='_blank'
-						rel='noopener noreferrer'
-						href='https://drive.google.com/file/d/1uEOiAjcR4z56HDJx2Rgf78D7sumiq-x4/view?usp=sharing'
+						// target='_blank'
+						// rel='noopener noreferrer'
+						// href='https://drive.google.com/file/d/1uEOiAjcR4z56HDJx2Rgf78D7sumiq-x4/view?usp=sharing'
+						href='https://www.estebanpm.com/cv.pdf'
 						download
 						className='bg-slate-800 text-white px-3 rounded-md flex items-center justify-center'
 					>
