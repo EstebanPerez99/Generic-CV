@@ -27,6 +27,7 @@ body {
 	background-color: white;
 	border-radius: 10px 10px 0 0;
 	overflow: hidden;
+	min-width: 350px;
 }
 
 .bg-cover {

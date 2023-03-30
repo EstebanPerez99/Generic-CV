@@ -99,7 +99,7 @@ export default function Home() {
 						className='rounded-full border-4 border-white absolute -bottom-20 left-6'
 					/>
 				</div>
-				<div className='flex gap-4 ml-52 mt-6'>
+				<div className='flex gap-4 ml-8 mt-24 flex-wrap md:ml-52 md:mt-6'>
 					<a
 						target='_blank'
 						rel='noopener noreferrer'
@@ -124,7 +124,7 @@ export default function Home() {
 						Download CV
 					</a>
 				</div>
-				<div className='mt-12 px-8 mb-10'>
+				<div className='mt-6 md:mt-12 px-8 mb-10'>
 					<p className='text-3xl'>Esteban Pérez Martínez</p>
 					<p className='text-xl'>Software engineer</p>
 					<p
