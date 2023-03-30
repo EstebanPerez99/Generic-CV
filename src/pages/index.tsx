@@ -37,6 +37,7 @@ import typeorm from "../assets/typeorm.png";
 import jest from "../assets/jest.png";
 import prisma from "../assets/prisma.png";
 import supabase from "../assets/supabase.png";
+import vite from "../assets/vite.png";
 import redux from "../assets/redux.png";
 import zustand from "../assets/zustand.png";
 import reactquery from "../assets/reactquery.png";
@@ -46,10 +47,37 @@ import dots from "../assets/dots.jpeg";
 import bosch from "../assets/bosch.jpeg";
 import bmw from "../assets/bmw.jpeg";
 import atrato from "../assets/atrato.jpeg";
+import tec from "../assets/tecmty.svg";
 import esslingen from "../assets/esslingen.jpeg";
 import Section from "@/components/Section";
+import { useEffect, useState } from "react";
+import DownloadIcon from "@/icons/DownloadIcon";
 
 export default function Home() {
+	const [showCopiedEmail, setShowCopiedEmail] = useState(false);
+	const [showCopiedNumber, setShowCopiedNumber] = useState(false);
+
+	// function handleDownloadPDF() {
+	// 	const link = document.createElement("a");
+	// 	link.href = pdf;
+	// 	link.download = "Esteban-Perez-CV.pdf";
+	// 	document.body.appendChild(link);
+	// 	link.click();
+	// 	document.body.removeChild(link);
+	// }
+	// function handleDownloadPDF() {
+	// 	const file = require("../assets/Esteban-Perez-CV.pdf");
+	// 	const blob = new Blob([file], { type: "application/pdf" });
+	// 	const url = URL.createObjectURL(blob);
+	// 	const link = document.createElement("a");
+	// 	link.href = url;
+	// 	link.download = "Esteban-Perez-CV.pdf";
+	// 	document.body.appendChild(link);
+	// 	link.click();
+	// 	document.body.removeChild(link);
+	// 	URL.revokeObjectURL(url);
+	// }
+
 	return (
 		<>
 			<Head>
@@ -60,34 +88,88 @@ export default function Home() {
 			</Head>
 			<main className='wrapper text-slate-800'>
 				<div className='bg-cover relative'>
+					<p className='bg-gradient-to-r from-[#39B946] to-[#4ED7A9] text-slate-800 opacity-90 font-bold inline mx-2 px-5 py-1 absolute bottom-4 left-36 rounded-e-full'>
+						OPEN TO WORK
+					</p>
 					<Image
 						src={profilePic}
 						alt='Profile picture'
 						width={150}
 						height={150}
-						className='rounded-full border-4 border-whte absolute -bottom-20 left-6'
+						className='rounded-full border-4 border-white absolute -bottom-20 left-6'
 					/>
 				</div>
-				<div className='mt-24 px-8 mb-10'>
+				<div className='flex gap-4 ml-52 mt-6'>
+					<a
+						target='_blank'
+						rel='noopener noreferrer'
+						href='https://twitter.com/estebanpm__'
+					>
+						<TwitterIcon className='pb-1' size={31} />
+					</a>
+					<a
+						target='_blank'
+						rel='noopener noreferrer'
+						href='https://www.linkedin.com/in/esteban-perez-martinez/'
+					>
+						<LinkedinIcon size={31} />
+					</a>
+					<a
+						target='_blank'
+						rel='noopener noreferrer'
+						href='https://drive.google.com/file/d/1uEOiAjcR4z56HDJx2Rgf78D7sumiq-x4/view?usp=sharing'
+						download
+						className='bg-slate-800 text-white px-3 rounded-md flex items-center justify-center'
+					>
+						Download CV
+					</a>
+				</div>
+				<div className='mt-12 px-8 mb-10'>
 					<p className='text-3xl'>Esteban Pérez Martínez</p>
 					<p className='text-xl'>Software engineer</p>
-					<p className='flex mt-3'>
-						{/* <EmailIcon className='mr-3' size={20} /> */}
-						Email: estebanperma@gmail.com
+					<p
+						className='flex mt-3 cursor-pointer'
+						onClick={() => {
+							setShowCopiedEmail(true);
+							navigator.clipboard.writeText("estebanperma@gmail.com");
+							setTimeout(() => {
+								setShowCopiedEmail(false);
+							}, 2000);
+						}}
+					>
+						<EmailIcon className='mr-3' size={20} />
+						estebanperma@gmail.com{" "}
+						{showCopiedEmail && (
+							<span className='fade-in-out bg-slate-100 text-slate-800 text-sm px-2 rounded-full ml-4 mt-1'>
+								Copied to clipboard!
+							</span>
+						)}
 					</p>
-					<p className='flex'>
-						{/* <PhoneIcon className='mr-3' size={20} /> */}
-						Phone: +52 3319764162
+					<p
+						className='flex mt-3 cursor-pointer'
+						onClick={() => {
+							setShowCopiedNumber(true);
+							navigator.clipboard.writeText("+523319764162");
+							setTimeout(() => {
+								setShowCopiedNumber(false);
+							}, 2000);
+						}}
+					>
+						<PhoneIcon className='mr-3' size={20} />
+						+52 3319764162{" "}
+						{showCopiedNumber && (
+							<span className='fade-in-out bg-slate-100 text-slate-800 text-sm px-2 rounded-full ml-4 mt-1'>
+								Copied to clipboard!
+							</span>
+						)}
 					</p>
-					<div className='flex gap-4 mt-4'>
-						<TwitterIcon className='pb-1' size={30} />
-						<LinkedinIcon size={30} />
-					</div>
 					<p className='mt-6 text-xl border-b-2 border-slate-100'>Skills</p>
 					<p className='text-lg font-semibold mt-4'>Tech stack</p>
+					<p className='text-slate-400 mt-4'>Advanced</p>
 					<div className='flex mt-2 gap-3 flex-wrap'>
 						<Tags name='React' image={reactlogo} />
 						<Tags name='Next js' image={nextjs} />
+						<Tags name='Vite' image={vite} />
 						<Tags name='Node js' image={node} />
 						<Tags name='Typescript' image={ts} />
 						<Tags name='Tailwind' image={tailwind} />
@@ -105,13 +187,16 @@ export default function Home() {
 						<Tags name='Material UI' image={materialui} />
 						<Tags name='Ant Design' image={antd} />
 						<Tags name='Express' image={express} />
+					</div>
+					<p className='text-slate-400 mt-4'>Intermediate</p>
+					<div className='flex mt-2 gap-3 flex-wrap'>
 						<Tags name='Keras' image={keras} />
 						<Tags name='Pandas' image={pandas} />
 						<Tags name='Numpy' image={numpy} />
 						<Tags name='Tensorflow' image={tensorflow} />
 						<Tags name='Python' image={python} />
 					</div>
-					<p className='text-lg font-semibold mt-4'>Developer tools</p>
+					<p className='text-lg font-semibold mt-10'>Developer tools</p>
 					<div className='flex mt-2 gap-3 flex-wrap'>
 						<Tags name='AWS' image={aws} />
 						<Tags name='Azure' image={azure} />
@@ -121,7 +206,7 @@ export default function Home() {
 						<Tags name='Cloudflare' image={cloudflare} />
 						<Tags name='Office' image={office} />
 					</div>
-					<p className='text-lg font-semibold mt-4'>SDK integrations</p>
+					<p className='text-lg font-semibold mt-10'>API&apos;s integrations</p>
 					<div className='flex mt-2 gap-3 flex-wrap'>
 						<Tags name='Open AI' image={openai} />
 						<Tags name='Twilio' image={twilio} />
@@ -129,7 +214,24 @@ export default function Home() {
 						<Tags name='Slack' image={slack} />
 						<Tags name='Cloudinary' image={cloudinary} />
 					</div>
-					<p className='mt-16 mb-8 text-xl border-b-2 border-slate-100'>
+					<p className='text-lg font-semibold mt-10 mb-4'>Languages</p>
+					<table>
+						<tbody>
+							<tr>
+								<td>Spanish</td>
+								<td className='pl-6'>Native Speaker</td>
+							</tr>
+							<tr>
+								<td>English</td>
+								<td className='pl-6'>C1</td>
+							</tr>
+							<tr>
+								<td>German</td>
+								<td className='pl-6'>B1</td>
+							</tr>
+						</tbody>
+					</table>
+					<p className='mt-12 mb-8 text-xl border-b-2 border-slate-100'>
 						Work Experience
 					</p>
 					<div className='flex flex-col gap-6'>
@@ -178,7 +280,7 @@ export default function Home() {
 							institution='Mechatronics Engineering'
 							period='2017 - 2022'
 							place='Mexico'
-							image={esslingen}
+							image={tec}
 						/>
 					</div>
 				</div>
