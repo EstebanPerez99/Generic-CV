@@ -217,7 +217,7 @@ export default function Home() {
 										Zapcard.xyz <LinkIcon size={14} className='mt-1 ml-3' />
 									</p>
 									<p className='text-sm'>
-										Online game in the style of hot potato. Guess the word
+										Online party game in the style of hot potato. Guess the word
 										before the bomb explodes!
 									</p>
 								</div>
