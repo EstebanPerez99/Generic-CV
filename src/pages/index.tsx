@@ -43,6 +43,8 @@ import zustand from "../assets/zustand.png";
 import reactquery from "../assets/reactquery.png";
 import antd from "../assets/antd.svg";
 import materialui from "../assets/materialui.png";
+import zapcard from "../assets/zapcard.png";
+import planodi from "../assets/planodi.jpg";
 import dots from "../assets/dots.jpeg";
 import bosch from "../assets/bosch.jpeg";
 import bmw from "../assets/bmw.jpeg";
@@ -53,6 +55,7 @@ import Section from "@/components/Section";
 import { useState } from "react";
 import DownloadIcon from "@/icons/DownloadIcon";
 import GithubIcon from "@/icons/GithubIcon";
+import LinkIcon from "@/icons/LinkIcon";
 
 export default function Home() {
 	const [showCopiedEmail, setShowCopiedEmail] = useState(false);
@@ -150,8 +153,79 @@ export default function Home() {
 							</span>
 						)}
 					</p>
+					<p className='mt-6 text-xl border-b-2 border-slate-100'>
+						Online Projects
+					</p>
+					<div className='flex mt-2 gap-5 flex-wrap'>
+						<a
+							href='https://www.planodi.com/'
+							target='_blank'
+							rel='noopener noreferrer'
+						>
+							<div className='flex shadow border border-gray-50 px-2 py-2 rounded-xl gap-4 justify-center items-start cursor-pointer h-32 w-full md:w-96 overflow-hidden'>
+								<div className='flex flex-col'>
+									<div className='relative h-20 w-20 overflow-hidden rounded-md'>
+										<Image
+											alt='logo'
+											src={planodi}
+											fill
+											style={{
+												objectFit: "cover",
+											}}
+										/>
+									</div>
+									<p className='text-xs mt-2 flex items-center justify-center m-0'>
+										Status: Live{" "}
+										<div className='w-2 h-2 bg-green-300 rounded-full ml-1' />
+									</p>
+								</div>
+								<div className='flex flex-col'>
+									<p className='mb-2 font-semibold flex'>
+										Planodi.com <LinkIcon size={14} className='mt-1 ml-3' />
+									</p>
+									<p className='text-sm'>
+										The &quot;Tripadvisor&quot; for event planning. Discover top
+										suppliers and venues for your events.
+									</p>
+								</div>
+							</div>
+						</a>
+						<a
+							href='https://zapcard.xyz/'
+							target='_blank'
+							rel='noopener noreferrer'
+						>
+							<div className='flex shadow border border-gray-50 px-2 py-2 rounded-xl gap-4 justify-center items-start cursor-pointer h-32 w-full md:w-96 overflow-hidden'>
+								<div className='flex flex-col'>
+									<div className='relative h-20 w-20 overflow-hidden rounded-md'>
+										<Image
+											alt='logo'
+											src={zapcard}
+											fill
+											style={{
+												objectFit: "cover",
+											}}
+										/>
+									</div>
+									<p className='text-xs mt-2 flex items-center justify-center m-0'>
+										Status: Live{" "}
+										<div className='w-2 h-2 bg-green-300 rounded-full ml-1' />
+									</p>
+								</div>
+								<div className='flex flex-col'>
+									<p className='mb-2 font-semibold flex'>
+										Zapcard.xyz <LinkIcon size={14} className='mt-1 ml-3' />
+									</p>
+									<p className='text-sm'>
+										Online game in the style of hot potato. Guess the word
+										before the bomb explodes!
+									</p>
+								</div>
+							</div>
+						</a>
+					</div>
 					<p className='mt-6 text-xl border-b-2 border-slate-100'>Skills</p>
-					<p className='text-lg font-semibold mt-4'>Tech stack</p>
+					<p className='text-lg font-semibold mt-4'>Tech Stack</p>
 					<p className='text-slate-400 mt-4'>Advanced</p>
 					<div className='flex mt-2 gap-3 flex-wrap'>
 						<Tags name='React' image={reactlogo} />
