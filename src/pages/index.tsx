@@ -317,7 +317,7 @@ export default function Home() {
 							position='Founding Software Engineer'
 							institution='Atrato (YCW21)'
 							period='Jan 2020 - Feb 2021 · 1 yr 2 mos'
-							place='Guadalajara, Jalisco, Mexico (On-site)'
+							place='Guadalajara, Jalisco, Mexico (Remote)'
 							image={atrato}
 							skills='Product Development, Ownership, Frontend Development, Backend Development'
 						/>
