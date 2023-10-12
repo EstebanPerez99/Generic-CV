@@ -7,12 +7,14 @@ function Section({
 	period,
 	place,
 	image,
+	skills,
 }: {
 	position: string;
 	institution: string;
 	period: string;
 	place: string;
 	image: StaticImageData;
+	skills?: string;
 }) {
 	return (
 		<div className='flex justify-start items-start gap-5'>
@@ -22,6 +24,7 @@ function Section({
 				<p>{institution}</p>
 				<p className='text-gray-500'>{period}</p>
 				<p className='text-gray-500'>{place}</p>
+				{skills && <p className='text-gray-500'>Skills: {skills}</p>}
 			</div>
 		</div>
 	);

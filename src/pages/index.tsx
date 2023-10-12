@@ -44,6 +44,7 @@ import reactquery from "../assets/reactquery.png";
 import antd from "../assets/antd.svg";
 import materialui from "../assets/materialui.png";
 import zapcard from "../assets/zapcard.png";
+import c3 from "../assets/c3.png";
 import planodi from "../assets/planodi.jpg";
 import dots from "../assets/dots.jpeg";
 import bosch from "../assets/bosch.jpeg";
@@ -174,10 +175,10 @@ export default function Home() {
 											}}
 										/>
 									</div>
-									<p className='text-xs mt-2 flex items-center justify-center m-0'>
+									<div className='text-xs mt-2 flex items-center justify-center m-0'>
 										Status: Live{" "}
 										<div className='w-2 h-2 bg-green-300 rounded-full ml-1' />
-									</p>
+									</div>
 								</div>
 								<div className='flex flex-col'>
 									<p className='mb-2 font-semibold flex'>
@@ -207,10 +208,10 @@ export default function Home() {
 											}}
 										/>
 									</div>
-									<p className='text-xs mt-2 flex items-center justify-center m-0'>
+									<div className='text-xs mt-2 flex items-center justify-center m-0'>
 										Status: Live{" "}
 										<div className='w-2 h-2 bg-green-300 rounded-full ml-1' />
-									</p>
+									</div>
 								</div>
 								<div className='flex flex-col'>
 									<p className='mb-2 font-semibold flex'>
@@ -297,32 +298,49 @@ export default function Home() {
 					</p>
 					<div className='flex flex-col gap-6'>
 						<Section
+							position='Software Engineer, Demo and Innovations Engineering'
+							institution='C3 AI'
+							period='Jul 2023 - Present · 4 mos'
+							place='Guadalajara, Jalisco, Mexico (On-site)'
+							image={c3}
+							skills='Communication, Teamwork'
+						/>
+						<Section
 							position='Full-stack Software Engineer'
 							institution='Dots (YCS21)'
-							period='Aug 2022 - Present · 8 mos'
+							period='Aug 2022 - Jun 2023 · 10 mos'
 							place='New York, US (Remote)'
 							image={dots}
-						/>
-						<Section
-							position='(Internship) Thesis Climatic condition monitoring in electric systems with AI'
-							institution='Bosch Engineering GmbH'
-							period='Mar 2022 - Jul 2022 · 5 mos'
-							place='Reutlingen, Baden-Württemberg, Germany'
-							image={bosch}
-						/>
-						<Section
-							position='(Internship) Development and type testing'
-							institution='BMW Group'
-							period='Sep 2021 - Feb 2022 · 6 mos'
-							place='Munich, Bavaria, Germany'
-							image={bmw}
+							skills='Web 3, Product Development, Ownership'
 						/>
 						<Section
 							position='Founding Software Engineer'
 							institution='Atrato (YCW21)'
 							period='Jan 2020 - Feb 2021 · 1 yr 2 mos'
-							place='Guadalajara, Jalisco, Mexico'
+							place='Guadalajara, Jalisco, Mexico (On-site)'
 							image={atrato}
+							skills='Product Development, Ownership, Frontend Development, Backend Development'
+						/>
+					</div>
+					<p className='mt-12 mb-8 text-xl border-b-2 border-slate-100'>
+						Internships and Thesis
+					</p>
+					<div className='flex flex-col gap-6'>
+						<Section
+							position='Thesis Climatic condition monitoring in electric systems with AI'
+							institution='Bosch Engineering GmbH'
+							period='Mar 2022 - Jul 2022 · 5 mos'
+							place='Reutlingen, Baden-Württemberg, Germany (On-site)'
+							image={bosch}
+							skills='AI, Research and Development'
+						/>
+						<Section
+							position='(Internship) Development and type testing'
+							institution='BMW Group'
+							period='Sep 2021 - Feb 2022 · 6 mos'
+							place='Munich, Bavaria, Germany (On-site)'
+							image={bmw}
+							skills='Product Management, Product Lifecycle'
 						/>
 					</div>
 					<p className='mt-16 mb-8 text-xl border-b-2 border-slate-100'>
