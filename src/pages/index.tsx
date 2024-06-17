@@ -62,6 +62,36 @@ export default function Home() {
 	const [showCopiedEmail, setShowCopiedEmail] = useState(false);
 	const [showCopiedNumber, setShowCopiedNumber] = useState(false);
 
+	function calculateEmploymentDuration(
+		startDate: string,
+		endDate = new Date()
+	) {
+		// Convertir las fechas en objetos Date si no lo son
+		const start = new Date(startDate);
+		const end = new Date(endDate);
+
+		// Calcular la diferencia en años y meses
+		let years = end.getFullYear() - start.getFullYear();
+		let months = end.getMonth() - start.getMonth();
+
+		// Ajustar los años y meses si los meses son negativos
+		if (months < 0) {
+			years--;
+			months += 12;
+		}
+
+		// Construir el resultado en el formato requerido
+		let result = [];
+		if (years > 0) {
+			result.push(`${years} yr${years > 1 ? "s" : ""}`);
+		}
+		if (months > 0) {
+			result.push(`${months} mo${months > 1 ? "s" : ""}`);
+		}
+
+		return result.length > 0 ? result.join(" ") : "0 mos";
+	}
+
 	return (
 		<>
 			<Head>
@@ -300,7 +330,9 @@ export default function Home() {
 						<Section
 							position='Software Engineer, Demo and Innovations Engineering'
 							institution='C3 AI'
-							period='Jul 2023 - Present · 4 mos'
+							period={`Jul 2023 - Present · ${calculateEmploymentDuration(
+								"2023-07-01"
+							)}`}
 							place='Guadalajara, Jalisco, Mexico (On-site)'
 							image={c3}
 							skills='Communication, Teamwork'
