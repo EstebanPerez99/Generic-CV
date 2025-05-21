@@ -337,7 +337,7 @@ export default function Home() {
 							period='Mar 2022 - Jul 2022 · 5 mos'
 							place='Reutlingen, Baden-Württemberg, Germany (On-site)'
 							image={bosch}
-							skills='AI, Research and Development'
+							skills={['AI', 'Research and Development']}
 						/>
 						<Section
 							position='(Internship) Development and type testing'
@@ -345,7 +345,7 @@ export default function Home() {
 							period='Sep 2021 - Feb 2022 · 6 mos'
 							place='Munich, Bavaria, Germany (On-site)'
 							image={bmw}
-							skills='Product Management, Product Lifecycle'
+							skills={['Product Management', 'Product Lifecycle']}
 						/>
 					</div>
 					<p className='mt-16 mb-8 text-xl border-b-2 border-slate-100'>
