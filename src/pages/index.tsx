@@ -17,7 +17,7 @@ import express from "../assets/express.png";
 import git from "../assets/git.png";
 import html from "../assets/html.png";
 import js from "../assets/js.png";
-import figma from "../assets/figma.avif";
+import figma from "../assets/figma.webp";
 import motion from "../assets/motion.png";
 import ps from "../assets/photoshop.png";
 import illustrator from "../assets/illustrator.png";
@@ -66,14 +66,26 @@ import atrato from "../assets/atrato.jpeg";
 import tec from "../assets/tecmty.svg";
 import esslingen from "../assets/esslingen.jpeg";
 import Section from "@/components/Section";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import DownloadIcon from "@/icons/DownloadIcon";
 import GithubIcon from "@/icons/GithubIcon";
 import LinkIcon from "@/icons/LinkIcon";
+import Lenis from "lenis";
 
 export default function Home() {
 	const [showCopiedEmail, setShowCopiedEmail] = useState(false);
 	const [showCopiedNumber, setShowCopiedNumber] = useState(false);
+
+	useEffect(() => {
+		const lenis = new Lenis();
+
+		function raf(time: number) {
+			lenis.raf(time);
+			requestAnimationFrame(raf);
+		}
+
+		requestAnimationFrame(raf);
+	}, []);
 
 	function calculateEmploymentDuration(
 		startDate: string,
@@ -278,10 +290,11 @@ export default function Home() {
 							period="Jan 2025 - Aug 2025 · 8 mos"
 							place='Remote'
 							image={pinterest}
-							skills='Full-stack Developer in the Trust & Safety team, building internal tools to protect
+							description='Full-stack Developer in the Trust & Safety team, building internal tools to protect
 	     users from content that violates Pinterest policies. Designed and implemented
 	     systems to automate report processing and support human moderation
 	     workflows.'
+							link='https://www.pinterest.com/'
 						/>
 						<Section
 							position='Software Engineer, Demo and Innovations Engineering'
@@ -289,7 +302,9 @@ export default function Home() {
 							period="Jul 2023 - Jan 2025 · 1 yr 7 mos"
 							place='Guadalajara, Jalisco, Mexico (On-site)'
 							image={c3}
-							skills={['Application development for C3 AI Reliability, a product using time series anomaly detection methods to perform asset predictive maintenance at scale.', "Skills: Communication, Teamwork"]}
+							skills={['Teamwork', "Communication"]}
+							description='Application development for C3 AI Reliability, a product using time series anomaly detection methods to perform asset predictive maintenance at scale.'
+							link='https://www.c3.ai/'
 						/>
 						<Section
 							position='Full-stack Software Engineer'
@@ -297,7 +312,9 @@ export default function Home() {
 							period='Aug 2022 - Jun 2023 · 10 mos'
 							place='New York, US (Remote)'
 							image={dots}
-							skills={["Planning and development of new features.", "Web 3 - Creation of a no-code tool to make discord bots."]}
+							skills={["Planning and development of new features."]}
+							description="Web 3 - Creation of a no-code tool to make Discord bots."
+							link='https://www.dots.community/'
 						/>
 						<Section
 							position='Founding Software Engineer'
@@ -305,7 +322,9 @@ export default function Home() {
 							period='Jan 2020 - Feb 2021 · 1 yr 2 mos'
 							place='Guadalajara, Jalisco, Mexico (Remote)'
 							image={atrato}
-							skills={["Founder engineer (3rd employee)", "Development and implementation of front-end and back-end projects: Servicing, our own CRM, account statements, collections with Twilio calls and mass emails, fraud detection system, among others.", 'Skills:Product Development, Ownership.']}
+							description="Founder engineer (3rd employee), development and implementation of front-end and back-end projects: Servicing, our own CRM, account statements, collections with Twilio calls and mass emails, fraud detection system, among others."
+							skills={['Product Development', 'Ownership']}
+							link='https://www.atratopago.com/'
 						/>
 					</div>
 					<p className='mt-12 mb-8 text-xl border-b-2 border-slate-100'>
@@ -412,7 +431,7 @@ export default function Home() {
 						<Tags name='Tensorflow' image={tensorflow} />
 						<Tags name='Python' image={python} />
 					</div>
-					<p className='text-lg font-semibold mt-10'>Developer Tools & Others</p>
+					<p className='text-lg font-semibold mt-10'>Developer Tools & Design</p>
 					<div className='flex mt-2 gap-3 flex-wrap'>
 						<Tags name='Cursor' image={cursor} />
 						<Tags name='AWS' image={aws} />
@@ -422,7 +441,8 @@ export default function Home() {
 						<Tags name='VSCode' image={vscode} />
 						<Tags name='Cloudflare' image={cloudflare} />
 						<Tags name='Office' image={office} />
-						<Tags name='Blender' image={blender} />
+						{/* <Tags name='Blender' image={blender} /> */}
+						<Tags name='Figma' image={figma} />
 						<Tags name='Photoshop' image={ps} />
 						<Tags name='Illustrator' image={illustrator} />
 					</div>
