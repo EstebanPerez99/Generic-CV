@@ -14,7 +14,7 @@ function Section({
 	period: string;
 	place: string;
 	image: StaticImageData;
-	skills?: string;
+	skills?: string | string[];
 }) {
 	return (
 		<div className='flex justify-start items-start gap-5'>
@@ -24,7 +24,17 @@ function Section({
 				<p>{institution}</p>
 				<p className='text-gray-500'>{period}</p>
 				<p className='text-gray-500'>{place}</p>
-				{skills && <p className='text-gray-500'>Skills: {skills}</p>}
+				{skills && (
+					Array.isArray(skills) ? (
+						<ul className="list-disc list-inside text-gray-500 mt-1">
+							{skills.map((skill, index) => (
+								<li key={index}>{skill}</li>
+							))}
+						</ul>
+					) : (
+						<p className='text-gray-500'>{skills}</p>
+					)
+				)}
 			</div>
 		</div>
 	);
