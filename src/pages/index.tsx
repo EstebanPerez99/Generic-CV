@@ -172,7 +172,7 @@ export default function Home() {
 				<div className='mt-6 md:mt-12 px-8 mb-10'>
 					<p className='text-3xl'>Esteban Pérez Martínez</p>
 					<p className='text-xl'>Software engineer</p>
-					<p className='text-lg text-slate-500'>Guadalajara, Mexico</p>
+					{/* <p className='text-lg text-slate-500'>Guadalajara, Mexico</p> */}
 					<p
 						className='flex mt-3 cursor-pointer'
 						onClick={() => {
@@ -191,7 +191,7 @@ export default function Home() {
 							</span>
 						)}
 					</p>
-					<p
+					{/* <p
 						className='flex mt-3 cursor-pointer'
 						onClick={() => {
 							setShowCopiedNumber(true);
@@ -208,7 +208,7 @@ export default function Home() {
 								Copied to clipboard!
 							</span>
 						)}
-					</p>
+					</p> */}
 					{/* <p className='mt-6 text-xl border-b-2 border-slate-100'>
 						Online Projects
 					</p>
@@ -280,6 +280,32 @@ export default function Home() {
 							</div>
 						</a>
 					</div> */}
+					<p className='mt-16 mb-8 text-xl border-b-2 border-slate-100'>
+						Education
+					</p>
+					<div className='flex flex-col gap-6'>
+						<Section
+							position='Master of Science in Technology Entrepreneurship'
+							institution='Technical University of Denmark'
+							period='Starting 09/2025'
+							place='Denmark'
+							image={DTU}
+						/>
+						<Section
+							position='Hochschule Esslingen - University of Applied Sciences'
+							institution='Double Degree Program, Mechatronics, Robotics, and Automation Engineering'
+							period='2021 - 2022'
+							place='Germany'
+							image={esslingen}
+						/>
+						<Section
+							position='Tecnológico de Monterrey'
+							institution='Mechatronics Engineering'
+							period='2017 - 2022'
+							place='Mexico'
+							image={tec}
+						/>
+					</div>
 					<p className='mt-12 mb-8 text-xl border-b-2 border-slate-100'>
 						Work Experience
 					</p>
@@ -346,32 +372,6 @@ export default function Home() {
 							place='Munich, Bavaria, Germany (On-site)'
 							image={bmw}
 							skills={['Product Management', 'Product Lifecycle']}
-						/>
-					</div>
-					<p className='mt-16 mb-8 text-xl border-b-2 border-slate-100'>
-						Education
-					</p>
-					<div className='flex flex-col gap-6'>
-						<Section
-							position='Master of Science in Technology Entrepreneurship'
-							institution='Technical University of Denmark'
-							period='2025 - 2027'
-							place='Denmark'
-							image={DTU}
-						/>
-						<Section
-							position='Hochschule Esslingen - University of Applied Sciences'
-							institution='Double Degree Program, Mechatronics, Robotics, and Automation Engineering'
-							period='2021 - 2022'
-							place='Germany'
-							image={esslingen}
-						/>
-						<Section
-							position='Tecnológico de Monterrey'
-							institution='Mechatronics Engineering'
-							period='2017 - 2022'
-							place='Mexico'
-							image={tec}
 						/>
 					</div>
 					<p className='mt-16 mb-8 text-xl border-b-2 border-slate-100'>Languages</p>
