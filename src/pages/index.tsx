@@ -65,6 +65,7 @@ import bmw from "../assets/bmw.jpeg";
 import atrato from "../assets/atrato.jpeg";
 import tec from "../assets/tecmty.svg";
 import esslingen from "../assets/esslingen.jpeg";
+import zoiosLogo from "../assets/zoios.png";
 import Section from "@/components/Section";
 import { useState, useEffect } from "react";
 import DownloadIcon from "@/icons/DownloadIcon";
@@ -73,125 +74,125 @@ import LinkIcon from "@/icons/LinkIcon";
 import Lenis from "lenis";
 
 export default function Home() {
-	const [showCopiedEmail, setShowCopiedEmail] = useState(false);
-	const [showCopiedNumber, setShowCopiedNumber] = useState(false);
+  const [showCopiedEmail, setShowCopiedEmail] = useState(false);
+  const [showCopiedNumber, setShowCopiedNumber] = useState(false);
 
-	useEffect(() => {
-		const lenis = new Lenis();
+  useEffect(() => {
+    const lenis = new Lenis();
 
-		function raf(time: number) {
-			lenis.raf(time);
-			requestAnimationFrame(raf);
-		}
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
 
-		requestAnimationFrame(raf);
-	}, []);
+    requestAnimationFrame(raf);
+  }, []);
 
-	function calculateEmploymentDuration(
-		startDate: string,
-		endDate = new Date()
-	) {
-		// Convertir las fechas en objetos Date si no lo son
-		const start = new Date(startDate);
-		const end = new Date(endDate);
+  function calculateEmploymentDuration(
+    startDate: string,
+    endDate = new Date(),
+  ) {
+    // Convertir las fechas en objetos Date si no lo son
+    const start = new Date(startDate);
+    const end = new Date(endDate);
 
-		// Calcular la diferencia en años y meses
-		let years = end.getFullYear() - start.getFullYear();
-		let months = end.getMonth() - start.getMonth();
+    // Calcular la diferencia en años y meses
+    let years = end.getFullYear() - start.getFullYear();
+    let months = end.getMonth() - start.getMonth();
 
-		// Ajustar los años y meses si los meses son negativos
-		if (months < 0) {
-			years--;
-			months += 12;
-		}
+    // Ajustar los años y meses si los meses son negativos
+    if (months < 0) {
+      years--;
+      months += 12;
+    }
 
-		// Construir el resultado en el formato requerido
-		let result = [];
-		if (years > 0) {
-			result.push(`${years} yr${years > 1 ? "s" : ""}`);
-		}
-		if (months > 0) {
-			result.push(`${months} mo${months > 1 ? "s" : ""}`);
-		}
+    // Construir el resultado en el formato requerido
+    let result = [];
+    if (years > 0) {
+      result.push(`${years} yr${years > 1 ? "s" : ""}`);
+    }
+    if (months > 0) {
+      result.push(`${months} mo${months > 1 ? "s" : ""}`);
+    }
 
-		return result.length > 0 ? result.join(" ") : "0 mos";
-	}
+    return result.length > 0 ? result.join(" ") : "0 mos";
+  }
 
-	return (
-		<>
-			<Head>
-				<title>Esteban Pérez</title>
-				<meta name='description' content='CV Esteban Pérez' />
-				<meta name='viewport' content='width=device-width, initial-scale=1' />
-				<link rel='icon' href='/favicon.ico' />
-			</Head>
-			<main className='wrapper text-slate-800'>
-				<div className='bg-cover relative'>
-					<p className='bg-gradient-to-r from-[#39B946] to-[#4ED7A9] text-slate-800 opacity-90 font-bold inline mx-2 px-5 py-1 absolute bottom-4 left-36 rounded-e-full'>
-						OPEN TO WORK
-					</p>
-					<Image
-						src={profilePic}
-						alt='Profile picture'
-						width={150}
-						height={150}
-						className='rounded-full border-4 border-white absolute -bottom-20 left-6'
-					/>
-				</div>
-				<div className='flex gap-4 ml-8 mt-24 flex-wrap md:ml-52 md:mt-6 items-center justify-start'>
-					{/* <a
+  return (
+    <>
+      <Head>
+        <title>Esteban Pérez</title>
+        <meta name="description" content="CV Esteban Pérez" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <main className="wrapper text-slate-800">
+        <div className="bg-cover relative">
+          <p className="bg-gradient-to-r from-[#39B946] to-[#4ED7A9] text-slate-800 opacity-90 font-bold inline mx-2 px-5 py-1 absolute bottom-4 left-36 rounded-e-full">
+            OPEN TO WORK
+          </p>
+          <Image
+            src={profilePic}
+            alt="Profile picture"
+            width={150}
+            height={150}
+            className="rounded-full border-4 border-white absolute -bottom-20 left-6"
+          />
+        </div>
+        <div className="flex gap-4 ml-8 mt-24 flex-wrap md:ml-52 md:mt-6 items-center justify-start">
+          {/* <a
 						target='_blank'
 						rel='noopener noreferrer'
 						href='https://twitter.com/estebanpm__'
 					>
 						<TwitterIcon className='pb-1' size={31} />
 					</a> */}
-					<a
-						target='_blank'
-						rel='noopener noreferrer'
-						href='https://www.linkedin.com/in/esteban-perez-martinez/'
-					>
-						<LinkedinIcon size={31} />
-					</a>
-					<a
-						target='_blank'
-						rel='noopener noreferrer'
-						href='https://github.com/EstebanPerez99'
-					>
-						<GithubIcon size={30} />
-					</a>
-					<a
-						href='https://www.estebanpm.com/cv.pdf'
-						download
-						className='bg-slate-800 text-white px-3 rounded-md flex items-center justify-center py-1'
-					>
-						<DownloadIcon className='mr-2' />
-						Download CV
-					</a>
-				</div>
-				<div className='mt-6 md:mt-12 px-8 mb-10'>
-					<p className='text-3xl'>Esteban Pérez Martínez</p>
-					<p className='text-xl'>Software engineer</p>
-					{/* <p className='text-lg text-slate-500'>Guadalajara, Mexico</p> */}
-					<p
-						className='flex mt-3 cursor-pointer'
-						onClick={() => {
-							setShowCopiedEmail(true);
-							navigator.clipboard.writeText("estebanperma@gmail.com");
-							setTimeout(() => {
-								setShowCopiedEmail(false);
-							}, 2000);
-						}}
-					>
-						<EmailIcon className='mr-3' size={20} />
-						estebanperma@gmail.com{" "}
-						{showCopiedEmail && (
-							<span className='fade-in-out bg-slate-100 text-slate-800 text-sm px-2 rounded-full ml-4 mt-1'>
-								Copied to clipboard!
-							</span>
-						)}
-					</p>
-					{/* <p
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.linkedin.com/in/esteban-perez-martinez/"
+          >
+            <LinkedinIcon size={31} />
+          </a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/EstebanPerez99"
+          >
+            <GithubIcon size={30} />
+          </a>
+          <a
+            href="https://www.estebanpm.com/cv.pdf"
+            download
+            className="bg-slate-800 text-white px-3 rounded-md flex items-center justify-center py-1"
+          >
+            <DownloadIcon className="mr-2" />
+            Download CV
+          </a>
+        </div>
+        <div className="mt-6 md:mt-12 px-8 mb-10">
+          <p className="text-3xl">Esteban Pérez Martínez</p>
+          <p className="text-xl">Software engineer</p>
+          {/* <p className='text-lg text-slate-500'>Guadalajara, Mexico</p> */}
+          <p
+            className="flex mt-3 cursor-pointer"
+            onClick={() => {
+              setShowCopiedEmail(true);
+              navigator.clipboard.writeText("estebanperma@gmail.com");
+              setTimeout(() => {
+                setShowCopiedEmail(false);
+              }, 2000);
+            }}
+          >
+            <EmailIcon className="mr-3" size={20} />
+            estebanperma@gmail.com{" "}
+            {showCopiedEmail && (
+              <span className="fade-in-out bg-slate-100 text-slate-800 text-sm px-2 rounded-full ml-4 mt-1">
+                Copied to clipboard!
+              </span>
+            )}
+          </p>
+          {/* <p
 						className='flex mt-3 cursor-pointer'
 						onClick={() => {
 							setShowCopiedNumber(true);
@@ -209,7 +210,7 @@ export default function Home() {
 							</span>
 						)}
 					</p> */}
-					{/* <p className='mt-6 text-xl border-b-2 border-slate-100'>
+          {/* <p className='mt-6 text-xl border-b-2 border-slate-100'>
 						Online Projects
 					</p>
 					<div className='flex mt-2 gap-5 flex-wrap'>
@@ -280,182 +281,195 @@ export default function Home() {
 							</div>
 						</a>
 					</div> */}
-					<p className='mt-16 mb-8 text-xl border-b-2 border-slate-100'>
-						Education
-					</p>
-					<div className='flex flex-col gap-6'>
-						<Section
-							position='Master of Science in Technology Entrepreneurship'
-							institution='Technical University of Denmark'
-							period='Starting 09/2025'
-							place='Denmark'
-							image={DTU}
-						/>
-						<Section
-							position='Hochschule Esslingen - University of Applied Sciences'
-							institution='Double Degree Program, Mechatronics, Robotics, and Automation Engineering'
-							period='2021 - 2022'
-							place='Germany'
-							image={esslingen}
-						/>
-						<Section
-							position='Tecnológico de Monterrey'
-							institution='Mechatronics Engineering'
-							period='2017 - 2022'
-							place='Mexico'
-							image={tec}
-						/>
-					</div>
-					<p className='mt-12 mb-8 text-xl border-b-2 border-slate-100'>
-						Work Experience
-					</p>
-					<div className='flex flex-col gap-6'>
-						<Section
-							position='Software Engineer II'
-							institution='Pinterest'
-							period="Jan 2025 - Aug 2025 · 8 mos"
-							place='Remote'
-							image={pinterest}
-							description='Full-stack Developer in the Trust & Safety team, building internal tools to protect
+          <p className="mt-16 mb-8 text-xl border-b-2 border-slate-100">
+            Education
+          </p>
+          <div className="flex flex-col gap-6">
+            <Section
+              position="Master of Science in Technology Entrepreneurship"
+              institution="Technical University of Denmark"
+              period="09/2025 - Present"
+              place="Denmark"
+              image={DTU}
+            />
+            <Section
+              position="Hochschule Esslingen - University of Applied Sciences"
+              institution="Double Degree Program, Mechatronics, Robotics, and Automation Engineering"
+              period="2021 - 2022"
+              place="Germany"
+              image={esslingen}
+            />
+            <Section
+              position="Tecnológico de Monterrey"
+              institution="Mechatronics Engineering"
+              period="2017 - 2022"
+              place="Mexico"
+              image={tec}
+            />
+          </div>
+          <p className="mt-12 mb-8 text-xl border-b-2 border-slate-100">
+            Work Experience
+          </p>
+          <div className="flex flex-col gap-6">
+            <Section
+              position="Software Engineer II"
+              institution="Pinterest"
+              period="Jan 2025 - Aug 2025 · 8 mos"
+              place="Remote"
+              image={pinterest}
+              description="Full-stack Developer in the Trust & Safety team, building internal tools to protect
 	     users from content that violates Pinterest policies. Designed and implemented
 	     systems to automate report processing and support human moderation
-	     workflows.'
-							link='https://www.pinterest.com/'
-						/>
-						<Section
-							position='Software Engineer, Demo and Innovations Engineering'
-							institution='C3 AI'
-							period="Jul 2023 - Jan 2025 · 1 yr 7 mos"
-							place='Guadalajara, Jalisco, Mexico (On-site)'
-							image={c3}
-							skills={['Teamwork', "Communication"]}
-							description='Application development for C3 AI Reliability, a product using time series anomaly detection methods to perform asset predictive maintenance at scale.'
-							link='https://www.c3.ai/'
-						/>
-						<Section
-							position='Full-stack Software Engineer'
-							institution='Dots (YCS21)'
-							period='Aug 2022 - Jun 2023 · 10 mos'
-							place='New York, US (Remote)'
-							image={dots}
-							skills={["Planning and development of new features."]}
-							description="Web 3 - Creation of a no-code tool to make Discord bots."
-							link='https://www.dots.community/'
-						/>
-						<Section
-							position='Founding Software Engineer'
-							institution='Atrato (YCW21)'
-							period='Jan 2020 - Feb 2021 · 1 yr 2 mos'
-							place='Guadalajara, Jalisco, Mexico (Remote)'
-							image={atrato}
-							description="Founder engineer (3rd employee), development and implementation of front-end and back-end projects: Servicing, our own CRM, account statements, collections with Twilio calls and mass emails, fraud detection system, among others."
-							skills={['Product Development', 'Ownership']}
-							link='https://www.atratopago.com/'
-						/>
-					</div>
-					<p className='mt-12 mb-8 text-xl border-b-2 border-slate-100'>
-						Internships and Thesis
-					</p>
-					<div className='flex flex-col gap-6'>
-						<Section
-							position='Thesis Climatic condition monitoring in electric systems with AI'
-							institution='Bosch Engineering GmbH'
-							period='Mar 2022 - Jul 2022 · 5 mos'
-							place='Reutlingen, Baden-Württemberg, Germany (On-site)'
-							image={bosch}
-							skills={['AI', 'Research and Development']}
-						/>
-						<Section
-							position='(Internship) Development and type testing'
-							institution='BMW Group'
-							period='Sep 2021 - Feb 2022 · 6 mos'
-							place='Munich, Bavaria, Germany (On-site)'
-							image={bmw}
-							skills={['Product Management', 'Product Lifecycle']}
-						/>
-					</div>
-					<p className='mt-16 mb-8 text-xl border-b-2 border-slate-100'>Languages</p>
-					<table>
-						<tbody>
-							<tr>
-								<td>Spanish</td>
-								<td className='pl-6'>Native Speaker</td>
-							</tr>
-							<tr>
-								<td>English</td>
-								<td className='pl-6'>C1</td>
-							</tr>
-							<tr>
-								<td>German</td>
-								<td className='pl-6'>B1</td>
-							</tr>
-						</tbody>
-					</table>
+	     workflows."
+              link="https://www.pinterest.com/"
+            />
+            <Section
+              position="Software Engineer, Demo and Innovations Engineering"
+              institution="C3 AI"
+              period="Jul 2023 - Jan 2025 · 1 yr 7 mos"
+              place="Guadalajara, Jalisco, Mexico (On-site)"
+              image={c3}
+              skills={["Teamwork", "Communication"]}
+              description="Application development for C3 AI Reliability, a product using time series anomaly detection methods to perform asset predictive maintenance at scale."
+              link="https://www.c3.ai/"
+            />
+            <Section
+              position="Full-stack Software Engineer"
+              institution="Dots (YCS21)"
+              period="Aug 2022 - Jun 2023 · 10 mos"
+              place="New York, US (Remote)"
+              image={dots}
+              skills={["Planning and development of new features."]}
+              description="Web 3 - Creation of a no-code tool to make Discord bots."
+              link="https://www.dots.community/"
+            />
+            <Section
+              position="Founding Software Engineer"
+              institution="Atrato (YCW21)"
+              period="Jan 2020 - Feb 2021 · 1 yr 2 mos"
+              place="Guadalajara, Jalisco, Mexico (Remote)"
+              image={atrato}
+              description="Founder engineer (3rd employee), development and implementation of front-end and back-end projects: Servicing, our own CRM, account statements, collections with Twilio calls and mass emails, fraud detection system, among others."
+              skills={["Product Development", "Ownership"]}
+              link="https://www.atratopago.com/"
+            />
+          </div>
+          <p className="mt-12 mb-8 text-xl border-b-2 border-slate-100">
+            Internships and Thesis
+          </p>
+          <div className="flex flex-col gap-6">
+            <Section
+              position="Student Software Engineer"
+              institution="Zoios · Part-time"
+              period="Sep 2025 - Present"
+              place="Copenhagen, Denmark"
+              image={zoiosLogo}
+              description="Full-stack Developer at Zoios, a startup building a platforms that helps companies scale well-being and performance with professional processes."
+              link="https://www.zoios.io"
+            />
+            <Section
+              position="Thesis Climatic condition monitoring in electric systems with AI"
+              institution="Bosch Engineering GmbH"
+              period="Mar 2022 - Jul 2022 · 5 mos"
+              place="Reutlingen, Baden-Württemberg, Germany (On-site)"
+              image={bosch}
+              skills={["AI", "Research and Development"]}
+            />
+            <Section
+              position="(Internship) Development and type testing"
+              institution="BMW Group"
+              period="Sep 2021 - Feb 2022 · 6 mos"
+              place="Munich, Bavaria, Germany (On-site)"
+              image={bmw}
+              skills={["Product Management", "Product Lifecycle"]}
+            />
+          </div>
+          <p className="mt-16 mb-8 text-xl border-b-2 border-slate-100">
+            Languages
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>Spanish</td>
+                <td className="pl-6">Native Speaker</td>
+              </tr>
+              <tr>
+                <td>English</td>
+                <td className="pl-6">C1</td>
+              </tr>
+              <tr>
+                <td>German</td>
+                <td className="pl-6">B1</td>
+              </tr>
+            </tbody>
+          </table>
 
-					<p className='mt-10 text-xl border-b-2 border-slate-100'>Skills</p>
-					<p className='text-lg font-semibold mt-4'>Tech Stack</p>
-					<p className='text-slate-400 mt-4'>Advanced</p>
-					<div className='flex mt-2 gap-3 flex-wrap'>
-						<Tags name='React' image={reactlogo} />
-						<Tags name='Next js' image={nextjs} />
-						<Tags name='Vite' image={vite} />
-						<Tags name='Node js' image={node} />
-						<Tags name='Typescript' image={ts} />
-						<Tags name='Tailwind' image={tailwind} />
-						<Tags name='Jest' image={jest} />
-						<Tags name='React Query' image={reactquery} />
-						<Tags name='Zustand' image={zustand} />
-						<Tags name='Prisma ORM' image={prisma} />
-						<Tags name='PostreSQL' image={postgre} />
-						<Tags name='MySQL' image={mysql} />
-						<Tags name='Javascript' image={js} />
-						<Tags name='HTML' image={html} />
-						<Tags name='CSS' image={css} />
-						<Tags name='Express' image={express} />
-						<Tags name='GraphQL' image={graphql} />
-						<Tags name='Shadcn' image={shadcn} />
-						<Tags name='Motion' image={motion} />
-						<Tags name='P5 js' image={p5} />
-						<Tags name='Three js' image={three} />
-						<Tags name='Ant Design' image={antd} />
-						<Tags name='Gestalt' image={gestalt} />
-						<Tags name='Material UI' image={materialui} />
-					</div>
-					<p className='text-slate-400 mt-4'>Intermediate</p>
-					<div className='flex mt-2 gap-3 flex-wrap'>
-						<Tags name='Redux' image={redux} />
-						<Tags name='TypeORM' image={typeorm} />
-						<Tags name='Keras' image={keras} />
-						<Tags name='Pandas' image={pandas} />
-						<Tags name='Numpy' image={numpy} />
-						<Tags name='Tensorflow' image={tensorflow} />
-						<Tags name='Python' image={python} />
-					</div>
-					<p className='text-lg font-semibold mt-10'>Developer Tools & Design</p>
-					<div className='flex mt-2 gap-3 flex-wrap'>
-						<Tags name='Cursor' image={cursor} />
-						<Tags name='AWS' image={aws} />
-						<Tags name='Azure' image={azure} />
-						<Tags name='Git' image={git} />
-						<Tags name='Supabase' image={supabase} />
-						<Tags name='VSCode' image={vscode} />
-						<Tags name='Cloudflare' image={cloudflare} />
-						<Tags name='Office' image={office} />
-						{/* <Tags name='Blender' image={blender} /> */}
-						<Tags name='Figma' image={figma} />
-						<Tags name='Photoshop' image={ps} />
-						<Tags name='Illustrator' image={illustrator} />
-					</div>
-					<p className='text-lg font-semibold mt-10'>API&apos;s Integrations</p>
-					<div className='flex mt-2 gap-3 flex-wrap'>
-						<Tags name='Open AI' image={openai} />
-						<Tags name='Twilio' image={twilio} />
-						<Tags name='Discord' image={discord} />
-						<Tags name='Slack' image={slack} />
-						<Tags name='Cloudinary' image={cloudinary} />
-					</div>
-				</div>
-			</main>
-		</>
-	);
+          <p className="mt-10 text-xl border-b-2 border-slate-100">Skills</p>
+          <p className="text-lg font-semibold mt-4">Tech Stack</p>
+          <p className="text-slate-400 mt-4">Advanced</p>
+          <div className="flex mt-2 gap-3 flex-wrap">
+            <Tags name="React" image={reactlogo} />
+            <Tags name="Next js" image={nextjs} />
+            <Tags name="Vite" image={vite} />
+            <Tags name="Node js" image={node} />
+            <Tags name="Typescript" image={ts} />
+            <Tags name="Tailwind" image={tailwind} />
+            <Tags name="Jest" image={jest} />
+            <Tags name="React Query" image={reactquery} />
+            <Tags name="Zustand" image={zustand} />
+            <Tags name="Prisma ORM" image={prisma} />
+            <Tags name="PostreSQL" image={postgre} />
+            <Tags name="MySQL" image={mysql} />
+            <Tags name="Javascript" image={js} />
+            <Tags name="HTML" image={html} />
+            <Tags name="CSS" image={css} />
+            <Tags name="Express" image={express} />
+            <Tags name="GraphQL" image={graphql} />
+            <Tags name="Shadcn" image={shadcn} />
+            <Tags name="Motion" image={motion} />
+            <Tags name="P5 js" image={p5} />
+            <Tags name="Three js" image={three} />
+            <Tags name="Ant Design" image={antd} />
+            <Tags name="Gestalt" image={gestalt} />
+            <Tags name="Material UI" image={materialui} />
+          </div>
+          <p className="text-slate-400 mt-4">Intermediate</p>
+          <div className="flex mt-2 gap-3 flex-wrap">
+            <Tags name="Redux" image={redux} />
+            <Tags name="TypeORM" image={typeorm} />
+            <Tags name="Keras" image={keras} />
+            <Tags name="Pandas" image={pandas} />
+            <Tags name="Numpy" image={numpy} />
+            <Tags name="Tensorflow" image={tensorflow} />
+            <Tags name="Python" image={python} />
+          </div>
+          <p className="text-lg font-semibold mt-10">
+            Developer Tools & Design
+          </p>
+          <div className="flex mt-2 gap-3 flex-wrap">
+            <Tags name="Cursor" image={cursor} />
+            <Tags name="AWS" image={aws} />
+            <Tags name="Azure" image={azure} />
+            <Tags name="Git" image={git} />
+            <Tags name="Supabase" image={supabase} />
+            <Tags name="VSCode" image={vscode} />
+            <Tags name="Cloudflare" image={cloudflare} />
+            <Tags name="Office" image={office} />
+            {/* <Tags name='Blender' image={blender} /> */}
+            <Tags name="Figma" image={figma} />
+            <Tags name="Photoshop" image={ps} />
+            <Tags name="Illustrator" image={illustrator} />
+          </div>
+          <p className="text-lg font-semibold mt-10">API&apos;s Integrations</p>
+          <div className="flex mt-2 gap-3 flex-wrap">
+            <Tags name="Open AI" image={openai} />
+            <Tags name="Twilio" image={twilio} />
+            <Tags name="Discord" image={discord} />
+            <Tags name="Slack" image={slack} />
+            <Tags name="Cloudinary" image={cloudinary} />
+          </div>
+        </div>
+      </main>
+    </>
+  );
 }
