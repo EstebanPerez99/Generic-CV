@@ -65,7 +65,7 @@ import bmw from "../assets/bmw.jpeg";
 import atrato from "../assets/atrato.jpeg";
 import tec from "../assets/tecmty.svg";
 import esslingen from "../assets/esslingen.jpeg";
-import zoiosLogo from "../assets/zoios.png";
+import zoiosLogo from "../assets/zoios.jpeg";
 import Section from "@/components/Section";
 import { useState, useEffect } from "react";
 import DownloadIcon from "@/icons/DownloadIcon";
