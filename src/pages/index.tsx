@@ -128,9 +128,9 @@ export default function Home() {
       </Head>
       <main className="wrapper text-slate-800">
         <div className="bg-cover relative">
-          <p className="bg-gradient-to-r from-[#39B946] to-[#4ED7A9] text-slate-800 opacity-90 font-bold inline mx-2 px-5 py-1 absolute bottom-4 left-36 rounded-e-full">
+          {/* <p className="bg-gradient-to-r from-[#39B946] to-[#4ED7A9] text-slate-800 opacity-90 font-bold inline mx-2 px-5 py-1 absolute bottom-4 left-36 rounded-e-full">
             OPEN TO WORK
-          </p>
+          </p> */}
           <Image
             src={profilePic}
             alt="Profile picture"
